@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body bgcolor="FFFF" align="center">
+    <h1>Number Checker</h1> Enter your Number :- <input type="number" id="myNumber">
+
+    <p><b>Click the button to check the number is Odd or Even.</p>
+
+    <button onclick="Even_Odd()">Try it</button>
+
+    <script type="text/javascript">
+        function Even_Odd() {
+            var x = document.getElementById("myNumber").value;
+            if (x % 2 == 0) {
+                document.write("Yes! this is Even Number:- ", x);
+            } else {
+                document.write("Yes! this is Odd Number :- ", x);
+            }
+        }
+    </script>
+</body>
+
+</html>

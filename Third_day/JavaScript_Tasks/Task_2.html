@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body bgcolor="99AFF" align="center">
+    <h1>Star Pattern</h1>
+    Enter Number For Of Pattern Size:- <input type=" number " id="Number " name="Number ">
+
+    <p><b>Click the button for console the pattern</p>
+
+    <button onclick="Star_pattern() ">Try it</button>
+        <script type="text/javascript ">
+            function Star_pattern(){
+                var x = document.getElementById("Number ").value;
+                for(let i = 0; i <= x; i++){
+                    for(let j = 0; j < i; j++){
+                        document.write(" * ")
+                    }
+                    document.write("<br>") } }
+    </script>
+</body>
+
+</html>
