@@ -1,32 +1,34 @@
 <html>
+
 <body>
-<script type="text/javascript">
+    <script type="text/javascript">
+        var grade = 'C';
+        switch (grade) {
+            case 'A':
+                document.write("Good job<br />");
+                break;
 
-	
+            case 'B':
+                document.write("Pretty good<br />");
+                break;
 
-var grade='C';
-switch (grade)
-{
-case 'A': document.write("Good job<br />");
-break;
+            case 'C':
+                document.write("Passed<br />");
+                break;
 
-case 'B': document.write("Pretty good<br />");
-break;
+            case 'D':
+                document.write("Not so good<br />");
+                break;
 
-case 'C': document.write("Passed<br />");
-break;
+            case 'F':
+                document.write("Failed<br />");
+                break;
 
-case 'D': document.write("Not so good<br />");
-break;
-
-case 'F': document.write("Failed<br />");
-break;
-
-default: document.write("Unknown grade<br />")
-}
-
-
-</script>
+            default:
+                document.write("Unknown grade<br />")
+        }
+    </script>
 
 </body>
+
 </html>
