@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area and Perimeter of a circle</title>
+</head>
+
+<body bgcolor="99AFF" align="center">
+    <h1><b>Area Of Circle</b></h1>
+    Enter Your Number For Size of Circle:- <input type="number" id="Number" name="Number">
+
+    <p><b>Click the button to Calculate to the area of Circle</p>
+
+    <button onclick="fun() ">Try it</button>
+        <script type="text/javascript ">
+            function fun(){
+                var x = document.getElementById("Number").value;
+                var d = Math.PI * x * x;
+                document.write(`The area of circle with radius ${x}cm is => `, d + "<br>");
+            }
+    </script>
+</body>
+
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area of a Triangle</title>
+</head>
+
+<body bgcolor="FFFF" align="center">
+    <h1><br> Area of Triangle</h1>
+
+    Enter The Three Sides Of Triangle <br>
+    <input type="number" id="Number1" name="Number1"><br>
+    <input type="number" id="Number2" name="Number2"><br>
+    <input type="number" id="Number3" name="Number3">
+
+    <p><b>Click the button to Calculate to the area of Triangle</p>
+
+    <button onclick="fun() ">Try it</button>
+        <script type="text/javascript ">
+            function fun(){
+                var side1 = Number(document.getElementById("Number1").value); 
+                console.log(side1);
+                var side2 = Number(document.getElementById("Number2").value); 
+                console.log(side2);
+                var side3 = Number(document.getElementById("Number3").value);
+                console.log(side3);
+                var s = (side1 + side2 + side3)/2;
+                var area =  Math.sqrt(s*((s-side1)*(s-side2)*(s-side3)))
+                console.log(area);
+                document.write(`These are three side of Triangle <b>Side1: ${side1} Side2: ${side2} Side3: ${side3}</b> => <b>Area of Triangle is ${area}</b> `) }
+        </script>
+</body>
+
+</body>
+
+</html>
