@@ -17,23 +17,22 @@
     <button onclick="Star_pattern() ">Try it</button>
         <script type="text/javascript ">
             function Star_pattern(){
-                var n = document.getElementById("Number ").value;
+                let n = document.getElementById("Number ").value;
                 let string = ""; 
                 for (let i = 1; i <= n; i++) {
                     // printing spaces
                     for (let j = 0; j < n - i; j++) {
                         string += " ";
-                        document.write(" ")
                     }
                     // printing star
                     for (let k = 0; k < i; k++) {
                         string += "*";
-                        document.write("*")
                     }
-                    string += "\n";
-                    document.write("<br>")
+                    string += "<br>";
                 }
-                console.log(string);
+                //console.log(string);
+                document.write(`<pre>${string}</pre>`)
+
             }
     </script>
 </body>
