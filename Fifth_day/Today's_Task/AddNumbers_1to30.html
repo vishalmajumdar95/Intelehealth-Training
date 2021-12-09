@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body bgcolor="pink" align="center">
+    <h1><b>Add your number together</b></h1>
+    Enter Your Number:- <input type="number" id="Number" name="Number">
+
+    <p><b>Click to Add the Numbers</p>
+
+    <button onclick="Add() ">Try it</button>
+        <script type="text/javascript ">
+            function Add(){
+                var number = parseInt(document.getElementById("Number").value)
+                var count = 0;
+                for(var i=1; i <= number ;i++){
+                    count = i + count;
+                }
+                document.write("This is your final output after Add all numbers together => ",count) 
+            }
+    </script>
+</body>
+
+</html>

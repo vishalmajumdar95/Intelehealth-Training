@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // accessible from anywhere
+        const i = " I am global Varible changed ";
+        //global Variable
+        // i= "Hello";
+        function show() {
+            var j = "I am local variable"; // local variable
+            document.write(i + "<br>"); // i accessible in function
+            document.write(j + "<br>"); // j accessible in function
+        }
+        show()
+
+        //const i ="Changing value of i";
+        document.write(i + "<br>"); //i accessible outer
+        // document.write(j+"<br>");// j not accessible outside
+
+        function disp() {
+            document.write(i + "<br>"); //i accessible in Function
+            document.write(j + "<br>"); //j not accessible in other function
+        }
+        disp();
+
+        if (true) {
+            var d = 12;
+            document.write(i + "<>"); // accessible in block
+            //document.write(j + "<br>"); //not accessible in block
+            document.write(d + "<br>")
+        }
+        //document.write(d)
+    </script>
+</body>
+
+</html>
