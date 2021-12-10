@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //A closure is an inner function that has access to the outer (enclosing) function's variables.
+        var a = 10;
+
+        function outerFun() {
+            var j = "J a local Variable of outer Function"; //Local Variable
+            document.write(j + "<br>"); // j accessible in function
+            // var k = "K in outer scope";
+            function innerFun() {
+                var k = "K a Local Variable of inner Function"; // Local variable
+                var c = a + j + k;
+                document.write(k + "<br>") //k accessible in function
+                document.write(j + "<br>") //j accessible in function
+            }
+            innerFun();
+            document.write(j + "<br>"); // j accessible in function
+            document.write(k + "<br>"); // k not accessible from outer function
+        }
+        outerFun();
+    </script>
+</body>
+
+</html>

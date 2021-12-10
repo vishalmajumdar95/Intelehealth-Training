@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body bgcolor="MediumSeaGreen" align="center">
+    <h1><b>LARGEST NUMBER</b></h1>
+    Enter Your Number:- <input type="number" id="Number1" name="Number1">
+
+    <p><b>Click to generate a multiplication table</p>
+
+    <button onclick="Table()">Table</button>
+    <button onclick="Tables()">Tables list</button>
+        <script type="text/javascript">
+            function Table(){
+                // program to generate a multiplication table
+
+                // take input from the user
+                const number = parseInt(document.getElementById("Number1").value);
+
+                //creating a multiplication table
+                for(let i = 1; i <= 10; i++) {
+
+                    // multiply i with number
+                    const result = i * number;
+
+                    // display the result
+                    console.log(`${number} * ${i} = ${result}`);
+                    document.write(`${number} * ${i} = ${result}`+"<br>");
+                }
+            };
+            function Tables(){
+                // program to generate a multiplication tables List
+
+                // take input from the user
+                const num = parseInt(document.getElementById("Number1").value);
+
+                //creating a multiplication table
+                for(let i = 1; i <= num; i++){
+                    for(let j = 1; j <= 10; j++) {
+
+                    // multiply i with number
+                    const result = j * i;
+
+                    // display the result
+                    console.log(`${i} * ${j} = ${result}`);
+                    document.write(`${i} * ${j} = ${result}`+"<br>");
+                    }
+                }
+            };
+        </script>
+</body>
+
+</html>

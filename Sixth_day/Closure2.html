@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=qq, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        //A closure is a function having access to the parent scope. It preserve the data outside
+        var i = 10;
+
+        function show() {
+            var j = 20;
+            document.write(j + "<br>");
+            document.write(i + "<br>")
+        }
+        show();
+        document.write(j + "<br>")
+    </script>
+</body>
+
+</html>

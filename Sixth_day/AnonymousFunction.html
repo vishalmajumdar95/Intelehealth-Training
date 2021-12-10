@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Storing Anonymous Function is variable
+        var disp1 = function() {
+            document.write("Hello World" + "<br>");
+        };
+        disp1();
+
+        //Passing function as an argument to other function => higher order functions
+        var a = function() {
+            return 5;
+        };
+        document.write(a() + "<br>");
+
+        function disp(a) {
+            return a();
+        };
+        document.write(disp(function() {
+            return 3;
+        }));
+    </script>
+</body>
+
+</html>
