@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="Gray" align="center">
+    <h1><b>Add Numbers Between 1 to UserNumber</b></h1>
+    Enter Your First Number:- <input type="number" id="Number1" name="Number1">
+    <br>Enter Your Second Number:- <input type="number" id="Number2" name="Number2">
+
+    <p><b>Click to Swap the Numbers</p>
+
+    <button onclick="Swap() ">Try it</button>
+        <script type="text/javascript ">
+            //JavaScript program to swap two variables
+            function Swap(){
+                //take input from the users
+                let a = document.getElementById("Number1").value;
+                let b = document.getElementById("Number2").value;
+
+                document.write(`The value of a before swapping: a = ${a} <br>`);
+                document.write(`The value of a before swapping: b = ${b} <br>`);
+
+                //using destructuring assignment
+                [a, b] = [b, a];
+
+                document.write(`The value of a after swapping: a = ${a} <br>`);
+                document.write(`The value of b after swapping: b = ${b} <br>`);
+            }
+    </script>
+</body>
+</html>
