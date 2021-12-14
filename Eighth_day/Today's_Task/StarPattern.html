@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pyramid triangle star pattern - javascript</title>
+</head>
+
+<body bgcolor="LightGray" align="center">
+    <h1>Star Pattern</h1>
+    Enter Number For Of Pattern Size:- <input type=" number " id="Number " name="Number ">
+
+    <p><b>Click for console the Downward triangle star pattern</p>
+    <!-- <h2>Pyramid triangle star pattern in javascript</h2> -->
+    <button onclick="Star_pattern() ">Try it</button>
+    <script>
+        function Star_pattern(){
+            let n = document.getElementById("Number ").value; // you can take input from prompt or change the value
+            let string = "";
+            // External loop
+            for (let i = 0; i < n; i++) {
+                // printing star
+                for (let k = 0; k < n - i; k++) {
+                    string += "*";
+                }
+                string += "<br>";
+            }
+            document.write(string);
+        }
+    </script>
+</body>
+
+</html>
