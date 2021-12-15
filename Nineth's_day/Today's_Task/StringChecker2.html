@@ -17,7 +17,7 @@
 	<button onclick="StringChecker()">onclick</button>
 	<script>
         function is_String(value) {
-            let a = value.split("")
+            let a = value.split("")[0]
             let b = "qwertyuiopasdfghjklzxcvbnm"
             if (b.includes(a)){
                 return true;
