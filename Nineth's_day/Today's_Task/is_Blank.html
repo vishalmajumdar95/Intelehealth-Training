@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="Gray" align="center">
+    <h1 style="color:green;">String Blank Checker</h1>
+    Fill The Box:- <input type = "text" id="strValue" name="strValue">
+
+    <p>Click to check it is blank or not</p>
+
+    <button onclick="Is_Blank()">onclick</button>
+        <script>
+            function Blank(value) {
+                if (value.length === 0)
+                return true;
+                else 
+                return false;
+            }
+            function Is_Blank() {
+                var x = document.getElementById('strValue').value
+                let check = Blank(x)
+			    if (check === true) {
+                    document.write(`Yes! This string value is blankng`)
+			    } else {
+                    document.write(`No! This string value is not blankng`)
+			    }
+		    }
+        </script>
+</body>
+</html>

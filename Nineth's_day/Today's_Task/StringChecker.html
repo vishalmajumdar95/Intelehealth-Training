@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<title>
+		Javascript | Check if a variable is a string
+	</title>
+</head>
+
+<body style="text-align:center;">
+
+	<h1 style="color:green;">String Checker</h1>
+    Fill The Box:- <input id="strValue" name="strValue">
+
+	<p>Click to check it is string or not</p>
+
+	<button onclick="StringChecker()">onclick</button>
+	<script>
+        function isString(value) {
+	        return typeof value === 'string' && value instanceof String;
+        }
+		function StringChecker() {
+            var x = document.getElementById('strValue').value
+            let check = isString(x)
+			if (check === true) {
+                document.write(`Yes! strValue = "${x}" This value is a string`)
+			} else {
+                document.write(`No! strValue = "${x}" This value is not a string`)
+			}
+		}
+	</script>
+</body>
+
+</html>
