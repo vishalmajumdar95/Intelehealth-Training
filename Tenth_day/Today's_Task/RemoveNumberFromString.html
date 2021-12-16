@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body bgcolor="Gray" align="center">
+    <h1 style="color:green;">Number from the String value</h1>
+    Fill The Box:- <input type="text" id="strValue" name="strValue">
+
+    <p>Click to remove the number form string</p>
+
+    <button onclick="Remove_Number()">onclick</button>
+    <script>
+        function Remove_Number() {
+            var str = document.getElementById("strValue").value;
+            var newstr = ""
+            for (var i of str) {
+                let a = "0123456789"
+                if (a.includes(i)) {
+                    continue
+                }
+                newstr += i
+            }
+            document.write(newstr)
+        }
+    </script>
+</body>
+
+</html>
+
+<!-- <body>
+    <script>
+        var str = "java1Scr2ipt"
+        var newstr = ""
+        for(var i of str){
+            let a = "0123456789"
+            if(a.includes(i)){
+                continue
+            }
+            newstr +=i
+        }
+        document.write(newstr)
+    </script>
+</body> -->

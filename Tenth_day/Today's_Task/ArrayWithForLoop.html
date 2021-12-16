@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="MediumSeaGreen" align="center">
+    <h1><b>LARGEST NUMBER</b></h1>
+    <script type="text/javascript">
+        // Literal Method Array 
+        var arr = ["Vishal","Suraj",56,"Jay",12,"AK"];
+        // Constructor Method Array
+        var arr1 = new Array("Vishal","Suraj",56,"Jay",12,"AK");
+
+        // For Loop Literal Array
+        for(var i=0;i<arr.length;i++){
+            document.write(i + ". " + arr[i]+ "<br>");
+        };
+        
+        // For Loop Constructor Array
+        for(var i=0;i<arr1.length;i++){
+            document.write(i + ". " + arr1[i]+ "<br>");
+        }  
+        
+        document.write("<hr/>");
+        
+        // ForEach Loop Literal Array
+        arr.forEach(function(value, index){
+            document.write(index + ". " +value + "<br>");
+        });
+
+        // ForEach Loop Constructor Array
+        arr1.forEach(function(value, index){
+            document.write(index + ". " +value + "<br>");
+        });
+
+        document.write("<hr/>");
+
+        // For Loop Literal Array
+        for(var i of arr){
+            document.write(arr.indexOf(i) + ". " + i+ "<br>");
+        };
+        
+        // For Loop Constructor Array
+        for(var i of arr1){
+            document.write(arr1.indexOf(i) + ". " + i+ "<br>");
+        };
+    </script>
+</body>
+</html>
