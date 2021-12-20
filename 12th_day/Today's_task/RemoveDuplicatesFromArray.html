@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="Gray" align="center">
+    <h1 style="color:green;">Remove Duplicates</h1>
+
+    <p>Click to Remove Duplicates from the Array</p>
+
+    <button onclick="Remove_Duplicate()">onclick</button>
+    <script>
+        function remove1(array){
+            var output = [];
+            for(var i of array){
+                if(output.indexOf(i) === -1){
+                    output.push(i);
+                }
+            }
+            document.write(`First Function Output =><b> New Array = "${output}" after Remove the Duplicates from the array.`+"<br>"+"<br>")
+        };
+        function remove2(array){
+            var output = [];
+            for(var i of array){
+                if(!output.includes(i)){
+                    output.push(i);
+                }
+            }
+            document.write(`Second Function Output =><b> New Array = "${output}" after Remove the Duplicates from the array.`)
+        };
+        function Remove_Duplicate() {
+            var array = [1,2,2,3,5,2,3,4];
+            document.write(`Old Array = "${array}" before Remove the Duplicates from the array.`+"<br>"+"<br>");
+            remove1(array);
+            remove2(array);
+        }
+    </script>
+</body>
+</html>

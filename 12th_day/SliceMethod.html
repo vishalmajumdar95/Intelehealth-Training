@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var arr = ["Rahul","Ram","Vishal","Suraj","Jay"];
+        document.write(arr+ "<br>");
+
+        //Slice Method
+        document.write(arr.slice(0,3)+"<br>");
+
+        //Slice method
+        // Remove all elements from index 2 (including index 2)
+        arr.slice(2,2);
+        document.write(arr+ "<br>"); // modifies original array
+
+        // Remove 1 elements from index 2
+        // it will be removed index 2 element
+        arr.slice(2,1);
+        document.write(arr+"<br>");
+
+        // Remove 2 elements from index 2
+        // it will be removed index 2 and 3, element
+        arr.slice(2,2);
+        document.write(arr+"<br>");
+
+        // Remove 0 elements from index 2 and insert "Dell" 
+        // it will not remove anything but will insert "Dell" at position 2
+        arr.slice(2,0,"Dell");
+        document.write(arr+"<br>");
+
+        // Remove 1 elements from index 2 and insert "Dell" and "HP"
+        arr.slice(2,2,"Dell","HP");
+        document.write(arr+"<br>");
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body bgcolor="Gray" align="center">
+    <h1 style="color:green;">Count Duplicates</h1>
+
+    <p>Click to count the number of elements from the Array</p>
+
+    <button onclick="count_duplicate()">onclick</button>
+    <script>
+        function count(a) {
+            let counts = {}
+            for (let i = 0; i < a.length; i++) {
+                if (counts[a[i]]) {
+                    counts[a[i]] += 1
+                } else {
+                    counts[a[i]] = 1
+                }
+            }
+            for (let prop in counts) {
+                document.write(`<b>"${prop }" counted :  " ${counts[prop]} " times.. <br>`)
+            }           
+        }
+        function count_duplicate() {
+            var array = ["Vishal","Suraj","Vishal"];
+            document.write(`Array = "${array}" ` + "<br>" + "<br>");
+            count(array);
+        }
+    </script>
+</body>
+
+</html>

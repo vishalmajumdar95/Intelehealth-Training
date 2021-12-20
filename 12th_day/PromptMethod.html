@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Definind Array
+        var elements = prompt("Enter number of Elements: ");
+        var a = [];
+        //Input for Array
+        for (var i = 0; i < elements; i++) {
+            a[i] = prompt("Enter element: ");
+        } 
+
+        //Display elements
+        for(var value of a) {
+            document.write(value+"<br>")
+        };
+        // -----------------------------------------------------------------------
+        
+        // Definind Array
+        var a = new Array(3); // Length of the array 3
+
+        // Length of the array
+        var ln = a.length
+
+        //Input for Array
+        for (var i = 0; i < ln; i++) {
+            a[i] = prompt("Enter element: ");
+        } 
+
+        //Display elements
+        for(var value of a) {
+            document.write(value+"<br>")
+        };
+    </script>
+</body>
+</html>

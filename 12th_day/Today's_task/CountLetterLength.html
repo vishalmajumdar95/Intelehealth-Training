@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="Gray" align="center">
+    <h1 style="color:green;">Letter Counter</h1>
+    Enter your string:- <input type = "text" id="strValue" name="strValue">
+    Enter the letter:- <input type = "text" id="strValue1" name="strValue1">
+
+    <p>Click to count the number of letter</p>
+
+    <button onclick="Count_Letters()">onclick</button>
+    <script>
+        function count(str,l){
+            var c = 0;
+            for(var i of str){
+                if(i === l){
+                    c++
+                }
+            }
+            document.write(`<b>Output => "${l}" this letter is "${c}" times in this "${str}"`)
+        };
+        function Count_Letters() {
+            var str = document.getElementById('strValue').value
+            var letter = document.getElementById('strValue1').value
+            document.write(`Input => "${str}" this is the string and this is letter "${letter}", we have to count`+"<br>"+"<br>");
+            count(str,letter);
+        }
+    </script>
+</body>
+</html>
