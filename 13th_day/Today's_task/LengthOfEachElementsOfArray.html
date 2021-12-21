@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body bgcolor="Gray" align="center">
+    <h1 style="color:green;">Length Counter</h1>
+
+    <p>Click to count the length of each element</p>
+
+    <button onclick="Length_counter()">onclick</button>
+    <script>
+        function Counter(array) {
+            let count = 0;
+            var d = {};
+            for (i of array) {
+                for (j of i) {
+                    count++
+                }
+                d[i] = count;
+            }
+            for(var i in d){
+                document.write(`"${i}" <b>: ${d[i]} </b><br>`);
+            }
+        };
+        function Length_counter() {
+            var array = ["Vishal", "Suraj", "Jay"];
+            document.write(`Array = "[${array}]" ` + "<br>" + "<br>");
+            document.write("<b>Ouput:- " + "<br></b>");
+            Counter(array);
+        }
+    </script>
+</body>
+
+</html>

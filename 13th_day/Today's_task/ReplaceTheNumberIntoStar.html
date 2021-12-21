@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body bgcolor="Gray" align="center">
+    <h1 style="color:green;">Replacer</h1>
+    Enter your String:- <input type = "text" id="strValue" name="strValue">
+
+    <p>Click to Replace the number into "*"</p>
+
+    <button onclick="replaceDigit()">onclick</button>
+    <script>
+        function replace(str) {
+            let newStr = str.split('');
+            for (let i = 0; i <= 9; i++) {
+                if (str.indexOf(i) > 0) {
+                    newStr[str.indexOf(i)] = "*";
+                    // return newStr.join(''); 
+                }
+            }
+            return newStr.join('');       
+        };
+        function replaceDigit() {
+            var string = document.getElementById('strValue').value;
+            document.write(`Input => string = <b>"${string}" </b> before replacing the number into "*"...`+"<br>"+"<br>");
+            document.write(`Output => string = <b> "${replace(string)}" </b> after replacing the number into "*"..`)
+        };
+    </script>
+</body>
+</html>

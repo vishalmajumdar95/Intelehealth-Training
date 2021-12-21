@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = "50";
+        var b = 10;
+        var c = 20;
+        var d = "hello";
+
+        // + works as concat with string 
+        document.write(b + c + "<br>"); // Number + Number = Number 10 + 20
+        document.write(a + c + "<br>"); // String + Number = String "50" + 20
+        document.write(b + a + "<br>"); // Number + String = String 10 + "50"
+        document.write(b + d + "<br>"); // Number + String = String 10 +"Hello"
+        document.write(d + b + "<br>"); // String + Number = String "Hello" + 10
+
+        // Other than +
+        document.write(c - b + "<br>"); // Number + Number = Number 10 - 20
+        document.write(a - b + "<br>"); // String + Number = Number "50" - 10
+        document.write(b - a + "<br>"); // Number + String = Number 10 - "50"
+        document.write(b - d + "<br>"); // Number + String = NaN (Number) 10 - "Hello"
+        document.write(d - b + "<br>"); // Number + String = NaN (Number) "Hello" - 10
+
+        // Type of
+        document.write(typeof(b + c) + "<br>"); // Number + Number = Number 10 + 20
+        document.write(typeof(a + b) + "<br>"); // String + Number = String "50" + 20
+        document.write(typeof(b + a) + "<br>"); // Number + String = String 10 + "50"
+        document.write(typeof(b + d) + "<br>"); // Number + String = String 10 + "Hello"
+        document.write(typeof(d + b) + "<br>"); // String + Number = String "Hello" + 10
+
+        // Other than +
+        document.write(typeof(c - b) + "<br>"); // Number + Number = Number
+        document.write(typeof(a - b) + "<br>"); // String + Number = Number "50" - 10
+        document.write(typeof(b - a) + "<br>"); // Number + String = Number 10 - "50"
+        document.write(typeof(b - d) + "<br>"); // Number + String = NaN (Number) 10 - "Hello"
+        document.write(typeof(d - b) + "<br>"); // Number + String = NaN (Number) "Hello" - 10
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body bgcolor="Gray" align="center">
+    <h1 style="color:green;">Generate Random</h1>
+
+    <p>Click to Generate a random</p>
+
+    <button onclick="Generater()">onclick</button>
+    <script>
+        function Random(array){
+            var output = [];
+            for(var i of array){
+                // Returns a random integer from 0 to array.lenth:
+                var rd = Math.floor(Math.random() * array.length);
+                if(!output.includes(array[rd])){
+                    output.push(array[rd]);
+                }
+            }
+            document.write(`First Function Output =><b> New Array = "[${output}]" after generate random index of the array.`+"<br>"+"<br>")
+        };
+        function Generater() {
+            var array = [1,2,3,"Red","Blue","Ramesh","True"];
+            document.write(`Old Array = "[${array}]" before generate random index of the array.`+"<br>"+"<br>");
+            Random(array);
+        }
+    </script>
+</body>
+
+</html>
