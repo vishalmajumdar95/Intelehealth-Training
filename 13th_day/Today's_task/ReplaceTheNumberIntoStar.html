@@ -1,20 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body bgcolor="Gray" align="center">
     <h1 style="color:green;">Replacer</h1>
-    Enter your String:- <input type = "text" id="strValue" name="strValue">
+    Enter your String:- <input type="text" id="strValue" name="strValue">
 
     <p>Click to Replace the number into "*"</p>
 
     <button onclick="replaceDigit()">onclick</button>
     <script>
-        function replace(str) {
+        // First solution
+        function start_replace(str) {
             let newStr = str.split('');
             for (let i = 0; i <= 9; i++) {
                 if (str.indexOf(i) > 0) {
@@ -22,13 +25,21 @@
                     // return newStr.join(''); 
                 }
             }
-            return newStr.join('');       
+            return newStr.join('');
         };
+        // Second solution
+        function start_replace2(str) {
+            var replace = str.replace(/[0-9]/g, '*');
+            return replace
+        }
         function replaceDigit() {
             var string = document.getElementById('strValue').value;
-            document.write(`Input => string = <b>"${string}" </b> before replacing the number into "*"...`+"<br>"+"<br>");
-            document.write(`Output => string = <b> "${replace(string)}" </b> after replacing the number into "*"..`)
+            document.write(`Input => string = <b>"${string}" </b> before replacing the number into "*"...` + "<br>" + "<br>");
+            document.write(`Output => string = <b> "${start_replace(string)}" </b> after replacing the number into "*"..`)
+            // document.write(`Output => string = <b> "${start_replace2(string)}" </b> after replacing the number into "*"..`)
+        
         };
     </script>
 </body>
+
 </html>
