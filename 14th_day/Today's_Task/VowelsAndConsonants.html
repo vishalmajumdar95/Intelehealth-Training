@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const str = prompt("Enter your String : ")
+        var d = {}
+        let count1 = 0;
+        let count2 = 0;
+        const data = ['a', 'e', 'i', 'o', 'u', 'A', 'E', 'I', 'O', 'U',]
+        for (i of str) {
+            if (data.includes(i)) {
+                count1++
+            } else {
+                count2++
+            }
+            d["Vovel"] = count1
+            d["Consonts"] = count2
+        }
+        for(var j in d){
+            document.write(`"${j}" : ${d[j]} <br>`)
+        }
+    </script>
+</body>
+
+</html>
