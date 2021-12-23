@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mouse-hover</title>
+    <style>
+         p:hover{
+            background-color: aqua;
+        } 
+    </style>
+</head>
+<body>
+    <h1>Welcome to my website</h1>
+    <p id="paragraph" onmouseover="over();" onmouseout="out();">Hello everyone</p>
+    <script> 
+        var par=document.getElementById('paragraph');
+    </script>
+    <hr>
+    <hr>
+    <hr>
+    <h1>Welcome To My Website</h1>
+
+    <p id="overout">This is paragraph</p>
+
+    <script>
+        document.getElementById("overout").onmouseover = function () {
+            mouseOver()
+        };
+        document.getElementById("overout").onmouseout = function () {
+            mouseOut()
+        };
+
+        function mouseOver() {
+            document.getElementById("overout").style.backgroundColor = "lightgreen";
+        }
+
+        function mouseOut() {
+            document.getElementById("overout").style.backgroundColor = "white";
+        }
+    </script>
+</body>
+</html>

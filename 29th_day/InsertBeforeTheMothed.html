@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <div>
+       <h1>JS Framework</h1>
+       <ul id="myul">
+           <li>Jquery</li>
+           <li id="myang">Angular JS</li>
+           <li>React JS</li>
+           <li id="myd3">D3 JS</li>
+       </ul>
+   </div>
+   <script>
+       parentNode.insertBefore(newNode, referenceNode);
+       // When insert New Element
+       //Accessing Parent Node
+       var parentNode = document.getElementById("myul");
+       //Creating New li Element
+       var newNode = document.createElement("li");
+
+       //Adding text using textContent
+       //newNode.textContent = "Backbone JS"
+       //<li>Backbone JS</li>
+       //Accessing reference Node 
+       var refNode = document.getElementById("myang");
+
+       //Insert New Element
+       //ParentNode.insertBefore(newNode,refNode);
+       //parentNode.insertBefore(newNode, null);
+       //console.log(parentNode);
+
+       //When insert  existing element
+       // var refNode = document.getElementById("myang");
+        // var moveNode = document.getElementById("myd3");
+        // document.getElementById("myul").insertBefore(moveNode, refNode);
+   </script>
+</body>
+</html>

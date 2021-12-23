@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* Encapsulation – The process of wrapping property and function within 
+        a single unit is known as encapsulation.*/
+
+        //encapsulation example
+        class person {
+            constructor(name, id) {
+                this.name = name;
+                this.id = id;
+            }
+            add_Address(add) {
+                this.add = add;
+            }
+            getDetails() {
+                console.log(`Name is ${this.name},Address is: ${this.add}`);
+            }
+        }
+
+        let person1 = new person('Mukul', 21);
+        person1.add_Address('Delhi');
+        person1.getDetails();
+        /////////////////////////////////////////////////////////////////////////////////////
+
+        class User {
+            name;
+            email;
+            #password;
+            constructor() { }
+
+            #validateEmail(email) {
+                // check email is valid or not.
+                return true;
+            }
+
+            #validatePassword(password) {
+                // check password is satisfying the minimum requirements or not.
+                return true;
+            }
+
+            signUp(name, email, password) {
+                let isValidated = false;
+                isValidated = this.#validateEmail(email);
+                isValidated &&= this.#validatePassword(password);
+
+                if (isValidated) {
+                    this.name = name;
+                    this.email = email;
+                    this.#password = password;
+                    // add user in your db.
+                    console.log('User registered successfuly');
+                } else {
+                    console.log('Please enter correct Details!!');
+                }
+            }
+
+            login(email, password) {
+                if (email === this.email && password === this.#password) {
+                    console.log('Login Successfully');
+                } else {
+                    console.log('Authentication Failed!!');
+                }
+            }
+
+            #isRegisteredUser(email) {
+                // check user is registered or not.
+                return true;
+            }
+
+            resetPassword(email, newPassword) {
+                if (this.#isRegisteredUser(email)) {
+                    this.#password = newPassword;
+                    console.log('Operation performed successfully');
+                }
+                else {
+                    console.log('No account found!');
+                }
+            }
+        };
+
+        const nehal = new User();
+        nehal.signUp('Nehal Mahida', 'nm@gmail.com', 'password:)'); // User registered successfuly
+
+        nehal.#validateEmail('nm@gmail.com'); // Syntax Error.
+
+        nehal.login('nm@gmail.com', 'password:)'); // Login Successfully
+        nehal.resetPassword('nm@gmail.com', ''); // Operation performed successfully
+    </script>
+</body>
+
+</html>

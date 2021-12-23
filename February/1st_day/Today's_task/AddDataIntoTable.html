@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+            text-align: center;
+        }
+
+        div{
+            display: inline-block;
+        }
+
+        button{
+            display: inline-block;
+            padding: 10px 20px;
+        }
+
+        table{
+            display: block;
+            margin-top: 20px;
+        }
+
+        th, td {
+            border: 1px solid black;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <button type="button" onclick="btn()">Get</button>
+        <div id="table"></div>
+    </div>
+    <script>
+        function btn(){
+        let btnGet = document.querySelector('button');
+        let myTable = document.querySelector('table');
+
+        let arr = [{ name: 'pen', id: 101, description: 'Red color'},
+                   { name: 'Notebook', id: 102, description: 'Blue color'},
+                   { name: 'Book', id: 103, description: 'Yellow color'},
+                   { name: 'Eraser', id: 104, description: 'White color'},
+                   { name: 'Pencil', id: 105, description: 'Black color'}]
+
+        let headers =['ID', 'Name', 'Description'];
+        
+        btnGet.addEventListener('click', () => 
+        {
+            let table = document.createElement('table');
+            let headerRow = document.createElement('tr');
+
+            headers.forEach(headerText =>{
+                let header = document.createElement('th');
+                let textNode = document.createTextNode(headerText);
+                header.appendChild(textNode);
+                headerRow.appendChild(header);
+            });
+
+            table.appendChild(headerRow);
+
+            employees.forEach(emp =>{
+                let row = document.createElement('tr');
+
+                Object.values(emp).forEach(text =>{
+                    let cell = document.createElement('td');
+                let textNode = document.createTextNode(text);
+                cell.appendChild(textNode);
+                headerRow.appendChild(cell);
+                })
+                table.appendChild(row);
+            });
+
+            myTable.appendChild(table);
+        });
+    }
+    </script>
+</body>
+</html>

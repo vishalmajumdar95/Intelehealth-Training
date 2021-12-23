@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Age Calculator</title>
+    <style>
+        body {
+            background-color: #0a6cf1;
+        }
+        .container * {
+            font-family: "Poppins", sans-serif;
+        }
+        input,
+        button {
+            height: 30px;
+            font-weight: 500;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        input {
+            width: 30%;
+            padding: 0 10px;
+            font-size: 14px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container" align="center">
+        <h1>Age Calculator</h1>
+        <input type="date" id="date-input">
+        <button onclick="ageCalculate()">Calculate</button>
+        <br><br>
+        <div id="calculateAge"></div>
+    </div>
+    <script>
+        const months = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+
+        function ageCalculate() {
+            let today = new Date();
+            let inputDate = new Date(document.getElementById("date-input").value);
+            let birthMonth, birthDate, birthYear;
+            let birthDetails = {
+                date: inputDate.getDate(),
+                month: inputDate.getMonth(),
+                year: inputDate.getFullYear()
+            }
+            let currentYear = today.getFullYear();
+            let currentMonth = today.getMonth() + 1;
+            let currentDate = today.getDate();
+
+            leapChecker(currentYear);
+
+            birthYear = currentYear - birthDetails.year;
+
+            if (currentMonth >= birthDetails.month) {
+                birthMonth = currentMonth - birthDetails.month;
+            } else {
+                birthYear--;
+                birthMonth = 12 + currentMonth - birthDetails.month;
+            }
+
+            if (currentDate >= birthDetails.date) {
+                birthDate = currentDate - birthDetails.date;
+            } else {
+                birthMonth--;
+                let days = months[currentMonth - 2];
+                birthDate = days + currentDate - birthDetails.date;
+                if (birthMonth < 0) {
+                    birthMonth = 11;
+                    birthYear--;
+                }
+            }
+            displayResult(birthDate, birthMonth, birthYear);
+        }
+
+        function displayResult(bDate, bMonth, bYear) {
+            calculateAge.innerHTML = `<h3>Your Age -   ${bYear}   Years   ${bMonth}   Months   ${bDate}   Days<h3>`
+        }
+
+        function leapChecker(year) {
+            if (year % 4 == 0 || (year % 100 == 0 && year % 400 == 0)) {
+                months[1] = 29;
+            } else {
+                months[1] = 28;
+            }
+        }
+    </script>
+</body>
+
+</html>

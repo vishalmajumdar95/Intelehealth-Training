@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <canvas id="myCanvas" width="600" height="350" style="border: 1px solid black;">
+    Your browser does not support the HTML5 canvas tag.
+    </canvas>
+
+    <script>
+        var c = document.getElementById("myCanvas");
+        var ctx = c.getContext("2d");
+
+        //Red rctangle
+        ctx.beginPath();
+        ctx.lineWidth = '6';
+        ctx.strokeStyle = "red";
+        ctx.rect(20, 20, 100, 100);
+        ctx.stroke();
+        ctx.fillStyle = "lightblue";
+        ctx.fill();
+
+        ctx.closeRect(45, 45,80,60);
+        ctx.strokeRect(50, 50, 70, 50);
+
+        //use the fillStyle property to set a color, gradient, or pattern
+    </script>
+</body>
+</html>

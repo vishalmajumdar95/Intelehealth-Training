@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var a = {
+            fname : "Vishal",
+            lname : "Majumdar",
+            age : 18,
+            email : "Vishal@gmail.com",
+            favMovies : ["Dhoom","Sholay","Dhoom-3"],
+            livings : {
+                city : "Noida",
+                country : "India"
+            },
+            salary : function(){
+                return 25000;
+            },
+            fullname : function(){
+                return this.fname + " " + this.lname
+            }
+        };
+        // document.write(a)
+        console.log(a)
+        // console.log(a.fname)
+        // document.write(a.fname)
+        // document.write(a.favMovies[0]);
+        // document.write(a.salary());//calling salary function
+        document.write(a.fullname());//calling fullname function
+        console.log(a.fullname());//
+        // document.write(a.livings)
+    </script>
+</body>
+</html>

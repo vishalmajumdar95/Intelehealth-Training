@@ -1,0 +1,84 @@
+<html>   
+   <head>
+      <title>Form Validation</title>      
+           <style>
+              
+           </style>
+   </head>
+   
+   <body>
+      <form name = "myForm" onsubmit = "return(validate());">
+         <table cellspacing = "2" cellpadding = "2" border = "1">
+            
+            <tr>
+               <td>Enter Racer Name</td>
+               <td><input type = "text" placeholder="FIRST NAME ONLY" name = "Name" id="Name" required/></td>
+            </tr>
+            
+            <tr>
+               <td>Enter Email</td>
+               <td><input type = "text" placeholder="abc@xyz.com" name = "Email" id="Email" required /></td>
+            </tr>
+            
+            <tr>
+            <tr>
+               <td>Enter Age</td>
+               <td><input type = "number" placeholder="18-60 c" name = "Age" id="Age" required/></td>
+            </tr>
+            </tr>
+            
+            <tr>
+               <td>Enter Date Of Birth</td>
+               <td>
+                <input type = "date" id="DOB" name = "DOB" required/>
+               </td>
+            </tr>
+            
+            <tr>
+               <td>Select T-Shirt Size</td>
+               <td>
+                  <select name = "Shirt">
+                     <option value = "-1">Small size</option>
+                     <option value = "2">Medium size</option>
+                     <option value = "3">Large size</option>
+                     <option value = "4">Extra Large size</option>
+                     <option value = "4">XXL size</option>
+                  </select>
+               </td>
+            </tr>
+
+            <tr>
+               <td>Confidence Level</td>
+               <!-- <td>0%<progress class="progress" id="progress1" value = "45" max = "100"></progress>45%</td> -->
+               <td>0%<input type="range">45%</td>
+            </tr>
+
+            <tr>
+                <td align="right"><progress class="progress" id="progress2" value="70" max="100"></progress></td>
+            </tr>
+            
+            <tr>
+               <td><button onclick="validation">Register</button></td>
+               <!-- <td><button onclick="blank">Skip</button></td> -->
+               <td><input type="button" value="Skip"/></td>
+            </tr>
+
+            
+            <tr>
+                <td align="right"><input type = "blank" name = "Name" /></td>
+            </tr>
+            
+         </table>
+      </form> 
+      
+    <script type = "text/javascript">
+      function validation(){
+        var username = document.getElementById("Name").value;
+        var email1 = document.getElementById("email").value;
+        var age = document.getElementById("Age").value;
+        var dateofbirth = document.getElementById("DOB").value;
+        var cl = document.getElementById("progress1").value;      
+      }
+    </script> 
+   </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Abstraction example
+        function person(fname, lname) {
+            let firstname = fname;
+            let lastname = lname;
+
+            let getDetails_noaccess = function () {
+                return (`First name is: ${firstname} Last
+			name is: ${lastname}`);
+            }
+
+            this.getDetails_access = function () {
+                return (`First name is: ${firstname}, Last
+			name is: ${lastname}`);
+            }
+        }
+        let person1 = new person('Mukul', 'Latiyan');
+        console.log(person1.firstname);
+        console.log(person1.getDetails_noaccess);
+        console.log(person1.getDetails_access());
+
+    </script>
+</body>
+
+</html>

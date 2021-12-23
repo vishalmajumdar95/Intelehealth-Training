@@ -1,0 +1,52 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body bgcolor="#90f090">
+    <div class="container" style="padding: 15% 20%">
+        <fieldset align="center" style="width: 50%; position:absolute">
+            <legend><h1 style="color:green">To Do List</h1></legend>
+            <div id="newtask">
+                <input type="text" placeholder="Task to be done..">
+                <button id="push">Add</button>
+            </div>
+            <div id="tasks"></div>
+        </fieldset>
+    </div>
+    <script>
+        document.querySelector('#push').onclick = function () {
+            if (document.querySelector('#newtask input').value.length == 0) {
+                alert("Please Enter a Task")
+            }
+
+            else {
+                document.querySelector('#tasks').innerHTML += `
+            <div class="task">
+                <span id="taskname">
+                    ${document.querySelector('#newtask input').value}
+                </span>
+                <button class="delete">
+                    Delete
+                    </button>
+            </div>
+        `;
+
+                var current_tasks = document.querySelectorAll(".delete");
+                for (var i = 0; i < current_tasks.length; i++) {
+                    current_tasks[i].onclick = function () {
+                        this.parentNode.remove();
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+
+</html>

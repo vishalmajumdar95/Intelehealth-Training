@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function drawDiagonal(){
+            var canvas = document.getElementById('diagonal');
+            // console.log(canvas);
+            var context = canvas.getContext('2d');
+
+            //begin Pathname
+            context.beginPath();
+            context.moveTo(100,100);
+            context.lineTo(400,400);
+            context.lineTo(700,100);
+            context.lineWidth = 30;
+            context.lineCap = 'round';//bydefault butt/round/square
+            context.lineJoin = 'bevel';//bydefault miter/round/bevel
+            // context.closePath();
+            context.stroke();
+        }
+        window.addEventListener("load",drawDiagonal,false);
+    </script>
+</head>
+<body>
+    <canvas id="diagonal" width="800" height="500" style="border:1px solid black;"></canvas>
+</body>
+</html>

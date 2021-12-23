@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree</title>
+</head>
+<body>
+    <h1>We are Learning JS</h1>
+    <h1>Hello world!</h1>
+    <h2>Now</h2>
+    <p id="para">Hello <span>World</span></p>
+    <p id="find">Bye <span>World</span></p>
+    <div>
+        <p>1st p inside the div</p>
+        <p>2st p inside the div</p>
+    </div>
+    <script>
+        //Whole Document
+        var result = document.getElementsByTagName("*");
+        document.write(result);
+        console.log(result);
+
+        //only Inside Body
+        var result1 = document.body.getElementsByTagName("*");
+        document.write(result1);
+        console.log(result1);
+    </script>
+</body>
+</html>

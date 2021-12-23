@@ -1,0 +1,58 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>square pattern - javascript</title>
+</head>
+
+<body>
+    <h2>pattern in javascript</h2>
+    <script>
+        let string = "";
+        for (let i = 0; i < 2; i++) {
+            for (let j = 0; j < 5; j++) {
+                string += "*";
+            }
+            string += "<br>";
+        }
+        document.write(`*334* <br> **3** <br>` +string)
+        document.write();
+    </script>
+</body>
+
+</html> -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Pattern 2</title>
+</head>
+
+<body>
+    <script>
+        for (let i = 0; i < 4; i++) {
+            string = " ";
+            for (let j = 0; j < 5; j++) {
+                if ((i == 0) && (j == 1 || j == 2 || j == 3)) {
+                    string += 3 + " ";
+                }
+                else if(i==1 && j==2){
+                    string+=4+" ";
+                }
+                else {
+                    string += "*" + " ";
+                }
+            }
+            document.write(`<pre>${string}</pre>`);
+            console.log(string);
+        }
+    </script>
+</body>
+
+</html>

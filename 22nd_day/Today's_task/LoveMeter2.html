@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Meter</title>
+    <style>
+        .main {
+            margin-top: 50px;
+            margin-bottom: 50px;
+            padding: 20px 50px;
+            border: 5px solid #AB6C6C;
+            background-color: #BB9898;
+            clear: both;
+        }
+
+        #result {
+            color: rgb(202, 58, 58);
+            font-size: 85px;
+            text-shadow: 1px 1px 1px #646161;
+            height: 150px;
+        }
+    </style>
+</head>
+
+<body align="center">
+    <div class="main">
+        <h1>Love Calculator</h1>
+        <h4>Input two peoples names to calculate the love....</h4>
+        <form role="form" class="form-horizontal">
+            <div class="form-group">
+                <input type="text" class="form-control" name="names" placeholder="Name One" />
+            </div>
+            <br>
+            <div class="form-group">
+                <input type="text" class="form-control" name="names" placeholder="Name Two" />
+            </div>
+            <br>
+            <div class="form-group">
+                <button class="btn btn-danger pull-right" type="submit" id="submit">Calculate</button>
+            </div>
+        </form>
+        <p id="warning" class="text-danger"></p>
+        <h1 id="result" class="text-center"></h1>
+    </div>
+    <script>
+        function love(array) {
+            var hold = [],
+                result,
+                newArray;
+            if (array.length > 2) {
+                newArray = array.map(function (item, index, array) {
+                    return item + array[index + 1];
+                });
+                newArray.forEach(function (item) {
+                    if (typeof item === "number" && !isNaN(item)) {
+                        if (item < 10) {
+                            hold.push(item);
+                        } else if (item > 9) {
+                            console.log('Splitting' + item + " into " + item.toString()[0] + " and " + item.toString()[1]);
+                            hold.push(parseInt(item.toString()[0]));
+                            hold.push(parseInt(item.toString()[1]));
+                        }
+                    } else {
+                        console.log("failed number check: " + item);
+                    }
+                });
+                love(hold);
+            } else {
+                document.getElementById('result').textContent = array[0] + "" + array[1] + "%";
+                result = array[0] + "" + array[1] + "%";
+                return result;
+            }
+        }
+
+        function calculate() {
+            var inputs = document.getElementsByName('names'),
+                loves = ["l", "o", "v", "e", "s"],
+                countArray = [],
+                count,
+                names,
+                jointNames;
+            document.getElementById('warning').textContent = "";
+            if (!inputs[0].value || !inputs[1].value) {
+                document.getElementById('warning').textContent = "Please enter both names.";
+            } else {
+                names = "" + inputs[0].value + "" + inputs[1].value + "";
+                jointNames = names.toLowerCase();
+                countArray = loves.map(function (item) {
+                    count = 0;
+                    for (var i = 0; i < jointNames.length; i += 1) {
+                        if (item === jointNames[i]) {
+                            count += 1;
+                        }
+                    }
+                    return count;
+                });
+                love(countArray);
+            }
+        }
+        document.getElementById('submit').addEventListener('click', function (e) {
+            e.preventDefault();
+            calculate();
+        }, false);
+    </script>
+</body>
+
+</html>

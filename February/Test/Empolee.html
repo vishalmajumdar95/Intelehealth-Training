@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        Html Employee Salary Data
+    </title>
+    <style>
+        body>table {
+            width: 80%;
+        }
+        table {
+            border-collapse: collapse;
+        }
+        table.list {
+            width: 100%;
+            /* margin-bottom: 200px; */
+        }
+        td,
+        th {
+            border: 1px solid #0c0c0c;
+            text-align: left;
+            padding: 2px;
+        }
+        tr:nth-child(even),
+        table.list thead>tr {
+            background-color: #dddddd;
+        }
+        input[type] {
+            width: 60%;
+            background-color: rgb(20, 220, 247);
+            color: #000;
+            padding: 6px;
+            margin: 5px 10;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        form div.form-action-buttons {
+            text-align: right;
+        }
+    </style>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td>
+                <form onsubmit="event.preventDefault();;" autocomplete="on">
+                    <div>
+                        <input type="submit" value="Add Employee" onclick="add()"><br><br>
+                    </div>
+                    <div>
+                        <input type="submit" value="Double Salary" onclick="Double()"><br><br>
+                    </div>
+                    <div>
+                        <input type="submit" value="Show Salary > 50000" onclick="Show()"><br><br>
+                    </div>
+                    <div>
+                        <input type="submit" value="Sort By Decending" onclick="Sort()"><br><br>
+                    </div>
+                    <div>
+                        <input type="submit" value="Calculate Salary Of All" onclick="Calculate()"><br><br>
+                    </div>
+                </form>
+            </td>
+            <td>
+                <table class="list" id="employeeList">
+                    <thead>
+                        <tr>
+                            <th>Employee</th>
+                            <th>Salary</th>
+                        </tr>
+                    </thead>
+                    <tbody id="myTbody">
+
+                    </tbody>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <script>
+
+        var array = [
+            { name: "mr.sachin", salary: "50000" },
+            { name: "mr.santosh", salary: "45000" },
+            { name: "mr.satyam", salary: "45000" },
+            { name: "m.shivam", salary: "60000" },
+            { name: "miss.sai", salary: "40000" },
+            { name: "miss.sakshi", salary: "35000" },
+            { name: "miss.sarthak", salary: "28000" },
+            { name: "mr.sonali", salary: "24000" },
+            { name: "mr.snehal", salary: "30000" },
+            { name: "mr.shweta", salary: "50000" },
+        ];
+		
+		var arraycurrent = 0;
+
+        function add() {
+		debugger;
+            var table = document.getElementById('myTbody')
+			var row = "";
+			row = table.innerHTML;
+			if (arraycurrent < array.length)
+			{			
+            row = row + `<tr>
+						<td>${array[arraycurrent].name}</td>
+						<td>${array[arraycurrent].salary}</td>
+				  </tr>`                            
+			arraycurrent = arraycurrent + 1;
+			table.innerHTML = row
+			}
+        }
+
+        function Double() {
+            var table = document.getElementById('myTbody')
+			var row = "";
+            for (var i = 0; i < array.length; i++) {
+                let sal = array[i].salary * 2
+                row = row + `<tr>
+						<td>${array[i].name}</td>
+						<td>${array[i].salary*2}</td>
+				  </tr>`                
+            }
+			table.innerHTML = row
+        }
+		
+        function Show() {		
+            var table = document.getElementById('myTbody')
+			var row = "";
+            for (var i = 0; i < array.length; i++) {
+                let sal = array[i].salary
+                if( sal > 50000 ) {
+                    row = row + `<tr>
+                            <td>${array[i].name}</td>
+                            <td>${sal}</td>
+                    </tr>`                    
+                }
+            }
+			table.innerHTML = row
+        }
+
+        function Sort() {		
+            var table = document.getElementById('myTbody')
+            var arr = array.sort(function(a,b){
+                return b.salary - a.salary; 
+                }
+            )            
+			var row = "";
+            for (var i = 0; i < arr.length; i++) {
+                row = row + `<tr>
+                        <td>${arr[i].name}</td>
+                        <td>${arr[i].salary}</td>
+                </tr>`                
+            }
+			table.innerHTML = row
+        }
+
+        function Calculate() {
+            var table = document.getElementById('myTbody')
+            var count = 0
+			var row = "";
+            for (var i = 0; i < array.length; i++) {
+                count = Number(array[i].salary) + count
+                row = row + `<tr>
+						<td>${array[i].name}</td>
+						<td>${array[i].salary}</td>
+				  </tr>`                
+            }
+			var newRow = `<tr><td>${count}</td>`
+			table.innerHTML = row + newRow		
+            
+        }
+    </script>
+</body>
+</html>

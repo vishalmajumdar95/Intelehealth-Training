@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Article - Number pattern 5</title>
+</head>
+
+<body bgcolor="green" align="center">
+    <h1>Number pattern</h1>
+    Enter Number For Of Pattern Size:- <input type="number" id="Number" name="Number">
+
+    <p><b>Click for console the Number Pattern</p>
+
+    <button onclick="Number_pattern() ">Try it</button>
+    <script>
+        function Number_pattern() {
+            let n = document.getElementById("Number").value; // height of pattern
+            let string = "";
+            // External loop
+            for (let i = 1; i <= n; i++) {
+                for (let j = 1; j <= n - i + 1; j++) {
+                    string += n - j + 1;
+                }
+                string += "\n";
+            }
+            document.write(`<pre>${string}</pre>`);
+            // console.log(string);
+        }
+    </script>
+</body>
+
+</html>

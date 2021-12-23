@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=1">
+    <title>Age Calculator</title>
+    <!-- <style>
+        *,
+        *:after,
+        *:before {
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            -ms-box-sizing: border-box;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: arial;
+            font-size: 16px;
+            margin: 0;
+            background: #072e4c;
+            color: #000;
+
+            display: flex;
+            min-height: 100vh;
+            align-items: center;
+        }
+
+        .age-calculate {
+            max-width: 600px;
+            width: 100%;
+            color: #fff;
+            margin: 0 auto;
+            text-align: center;
+            padding: 30px;
+            border-radius: 30px;
+            background: linear-gradient(to bottom, #007193 50%, #06024e);
+        }
+
+        h1 {
+            margin: 0 0 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 36px;
+        }
+
+        .age-calculate input[type="date"] {
+            width: 60%;
+            display: block;
+            margin: 0 auto 20px;
+            font-size: 20px;
+            padding: 10px;
+            border-radius: 10px;
+            border: 0;
+        }
+
+        .age-calculate button {
+            width: 60%;
+            display: block;
+            margin: 0 auto 10px;
+            font-size: 16px;
+            padding: 13px;
+            border-radius: 10px;
+            border: 0;
+            background: #00a1ed;
+            color: #fff;
+            text-transform: uppercase;
+            font-weight: 700;
+            cursor: pointer;
+        }
+
+        #calculateAge {
+            font-size: 24px;
+        }
+    </style> -->
+</head>
+
+<body>
+
+    <div class="age-calculate" align="center">
+        <h1>Age Calculator</h1>
+        <input type="date" id="birth_date" name="">
+        <button id="calculate">Calculate</button>
+        <br><br>
+        <div id="calculateAge"></div>
+    </div>
+
+    <script>
+        var calculate = document.getElementById('calculate'),
+            calculateAge = document.getElementById('calculateAge');
+
+        calculate.addEventListener('click', function () {
+            var birthDate = document.getElementById('birth_date').value;
+            birthDate = new Date(birthDate);
+            todayDate = new Date()
+            totalAge = Date.now() - birthDate.getTime();
+            ageYear = new Date(totalAge);
+            ageYear = Math.abs(ageYear.getUTCFullYear() - 1970);
+
+            function ageMonth() {
+                if (todayDate.getMonth() >= birthDate.getMonth()) {
+                    if (todayDate.getDate() >= birthDate.getDate()) {
+                        return todayDate.getMonth() - birthDate.getMonth();
+                    }
+                    else {
+                        if ((todayDate.getMonth() - 1) >= birthDate.getMonth()) {
+                            return (todayDate.getMonth() - 1) - birthDate.getMonth();
+                        }
+                        else {
+                            return ((todayDate.getMonth() - 1) + 12) - birthDate.getMonth();
+                        }
+                    }
+                }
+
+            };
+            function ageDay() {
+                if (todayDate.getDate() > birthDate.getDate()) {
+                    return todayDate.getDate() - birthDate.getDate();
+                }
+                else if (todayDate.getDate() == birthDate.getDate()) {
+                    return todayDate.getDate() - birthDate.getDate();
+                }
+                else {
+                    let calDate = new Date(birthDate.getFullYear(), birthDate.getMonth(), 0);
+                    return (todayDate.getDate() + calDate.getDate()) - birthDate.getDate();
+                }
+            };
+            calculateAge.innerHTML = "Your Age " + ageYear + " Years " + ageMonth() + " Months " + ageDay() + " Days"
+
+        });
+    </script>
+</body>
+
+</html>

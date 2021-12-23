@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <p>Hello Paragraph</p>
+    </div>
+    <h2 id="myh2" class="myclass" title="heading">Hello World</h2>
+    <script>
+        var h = document.getElementById("myh2");
+        console.log(h.attributes);
+        //returns all attributes list
+        console.log(h.attributes[0]);
+        //returns index 0 attribute
+        console.log(h.attributes["title"]);
+        //returns title key attribute
+    </script>
+</body>
+</html>

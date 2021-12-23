@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Mobile(){
+
+        }
+        // Mobile is the object created by function which is actually Function itself
+        // console.log(Mobile);
+
+        //prototype is a property of Mobile which points to the Prototype Object of Mobile
+        console.log(Mobile.prototype); // it will show Prototype Object of Mobile Function
+
+        // Creating a new Object using new keyword 
+        var lg = new Mobile();
+
+        //When you create a new objectof that function using new keyword JS Engine creates an object and sets a property named __proto__ which points to its function's prototype object
+        // console.log(lg.__proto__);//Mobile.prototype
+
+        //verifying all stuffs 
+        console.log(lg._proto_ === Mobile.prototype); 
+        //true 
+    </script>
+</body>
+</html>

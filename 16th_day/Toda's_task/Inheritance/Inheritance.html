@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* Inheritance – It is a concept in which some property and methods of 
+        an Object is being used by another Object. Unlike most of the OOP languages 
+        where classes inherit classes, JavaScript Object inherits Object 
+        i.e. certain features (property and methods)of one object can be reused by other Objects.*/
+
+        //Inheritance example
+        class person {
+            constructor(name) {
+                this.name = name;
+            }
+            //method to return the string
+            toString() {
+                return (`Name of person: ${this.name}`);
+            }
+        }
+        class student extends person {
+            constructor(name, id) {
+                //super keyword to for calling above class constructor
+                super(name);
+                this.id = id;
+            }
+            toString() {
+                return (`${super.toString()},Student ID: ${this.id}`);
+            }
+        }
+        let student1 = new student('Mukul', 22);
+        console.log(student1.toString());
+        ////////////////////////////////////////////////////////////////////////////////////
+        class User {
+            #password;
+            constructor(email, password) {
+                this.email = email;
+                this.#password = password;
+            }
+
+            login(email, password) {
+                if (email === this.email && password === this.#password) {
+                    console.log('Login Successfully');
+                } else {
+                    console.log('Authentication Failed!!');
+                }
+            }
+
+            resetPassword(newPassword) {
+                this.#password = newPassword;
+            }
+
+            logout() {
+                console.log('Logout Successfully');
+            }
+        }
+
+        class Author extends User {
+            #numOfPost;
+
+            constructor(email, password) {
+                super(email, password);
+                this.#numOfPost = 0;
+            }
+
+            createPost(content) {
+                // add content to your DB. :)
+                this.#numOfPost++;
+            }
+
+            getNumOfPost() {
+                return this.#numOfPost;
+            }
+        }
+
+        class Admin extends User {
+            constructor(email, password) {
+                super(email, password);
+            }
+
+            removeUser(userId) {
+                // remove this userId from your DB.
+                console.log('User Removed successfully.');
+            }
+        }
+
+        const nehal = new Author('nm@gmail.com', 'password:)');
+        nehal.login('nm@gmail.com', 'password:)');
+        nehal.createPost('I hope you are enjoying this article. Don\'t forget to leave your feedback. :)');
+        nehal.createPost('I am tired, Do you wanna buy me a coffee? :)');
+        console.log(nehal.getNumOfPost()); // 2
+
+        const json = new Admin('jason@gmail.com', '[Object] [object]');
+        json.login('jason@gmail.com', '[Object] [object]');
+        json.resetPassword('{id: 1}');
+        json.login('jason@gmail.com', '{id: 1}');
+        json.removeUser(12);
+    </script>
+</body>
+
+</html>

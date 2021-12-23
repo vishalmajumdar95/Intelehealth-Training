@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style type="text/css">
+        input {
+            outline:none;
+        }
+    </style>
+    <script>
+        function eFocus(){
+            // document.getElementById('text').style.background="red";
+            document.getElementById('text').style.borderColor="lightblue";
+        }
+
+        function eBlur(){
+            // document.getElementById('text').style.background="null";
+            document.getElementById('text').style.borderColor="null"
+        }
+    </script>
+
+</head>
+<body>
+    <input type="text" onfocus="eFocus()" onBlur="eBlur()" id="text" />
+</body>
+</html>

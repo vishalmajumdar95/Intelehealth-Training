@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>window Open</h1>
+    <button type="button" id="btn">Click</button>
+    <script>
+        function createWindow(){
+            window.open();
+        }
+
+        document.getElementById("btn").addEventListener("click",createWindow);
+
+        var newWindow = document.open(); //Open Empty Window
+        document.write(newWindow); //Object Window
+
+        var newWindow = window.open("http://www.myntra.com/");
+
+        var newWindow = newWindow.open("http://www.myntra.com/","_self");// Open in same window _self
+        
+        var newWindow = window.open("http://www.myntra.com","_black","height=400","width=600");//Open window in specified size
+
+        var newWindow = window.open("","_black","height=400","width=600");
+        newWindow.document.write("I am in new window");
+
+        var newWindow = window.open("http://www.jobong.com","_black","height=400","width=600","scrollbars=no");
+        //open window which has no scrollbars
+
+        var newWindow = window.open("http://www.twitter.com","_black","toolbar=no");
+    </script>
+</body>
+</html>

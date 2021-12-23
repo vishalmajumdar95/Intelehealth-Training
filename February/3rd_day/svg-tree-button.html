@@ -1,0 +1,106 @@
+<html>
+<head>
+	<script src="5_Util.js"></script>
+	<script>
+	function init()
+	{
+		var button1=document.getElementById("btnAdd");
+		EventUtil.addHandler(button1,"click",addTree);
+	}
+	EventUtil.addHandler(window,"load",init);//(elements to act on,the name of event,event handler function)
+
+	function addTree()
+	{
+		var x=Math.floor(Math.random()*400);
+		var y=Math.floor(Math.random()*400);
+		var scale=Math.random()+0.5;
+		transform="translate("+x+","+y+") scale("+scale+")";
+		var tree=document.createElementNS("http://www.w3.org/2000/svg","use");
+		tree.setAttributeNS("http://www.w3.org/1999/xlink","xlink:href","#tree");
+		tree.setAttribute("transform",transform);
+		document.querySelector("svg").appendChild(tree);
+		updateTree();
+
+	}
+	function updateTree()
+	{
+		var treeCnt=0;
+		var list=document.querySelectorAll("use");
+		for(var i=0;i<list.length;i++)
+		{
+			if(list[i].getAttribute("xlink:href")=="#tree")
+			{
+				treeCnt++;
+				EventUtil.addHandler(list[i],"click",addTree);
+			}
+		}
+		var txt=document.getElementById("txtCounter");
+		txt.textContent=treeCnt+"Trees in the forest!!";
+	}
+	/*function removeTree(event)
+	{
+		var e1=EventUtil.getEvent(event);
+		var elt=EventUtil.getTarget(e1);
+		if(elt.correspondingElementOnUse)
+		{http://www.w3.org/2000/svghttp://www.w3.org/2000/svg
+			elt=elt.correspondingElementOnUse;
+		}
+		elt.parentNode.removeChild(elt);
+		updateTree();
+	}*/
+	</script>
+
+	<style>
+	svg
+	{
+		border:2px solid red;
+	}
+	</style>
+	</head>
+<body>
+	<svg width="400" height="400">
+		<defs>
+			<rect id="trunk" x=-5 y=-50 width=10 height=50></rect>
+			<linearGradient id="trunkGrad">
+				<stop offset="0%" stop-color="#554400"></stop>
+				<stop offset="40%" stop-color="#996600"></stop>
+			</linearGradient>
+
+			<path id="canopy" d="M-25,-50
+								 L-10,-80
+								 L-20,-80
+								 L-5,-110
+								 L-15,-110
+								 L 0,-140
+								 L 15,-110
+								 L 5,-110
+								 L 20,-80
+								 L 10,-80
+								 L 25,-50
+								 Z"></path>
+			<g id="tree">
+				<use xlink:href="#trunk" fill="url(#trunkGrad)"></use>
+				<use xlink:href="#canopy" fill="green" stroke="yellow" stroke-width="2px" stroke-linejoin="round"></use>
+			</g>
+			<!--<g id="treeShadow">
+				<use xlink:href="#trunk" fill="#0000"></use>
+				<use xlink:href="#canopy" stroke="none" fill="#0000"></use>
+			</g>-->
+		</defs>	
+
+  		<text x=100 y=50 fill=red font-size=30px id="txtCounter">My Forest</text>
+
+		<!--<use xlink:href="#treeShadow" transform="translate(130, 250) rotate(30) scale(1, 0.6)" opacity="0.2"></use>-->
+		
+		<use xlink:href="#tree" transform="translate(130,250)" ></use>	
+	</svg>
+	<input type="button" value="Add Tree.." id="btnAdd"></input>
+</body>
+</html>
+
+
+
+
+
+
+

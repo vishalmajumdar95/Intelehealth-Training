@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* Objects are the basic run-time bodies in an object-oriented framework. 
+        They may represent a place, a person, an account, a table of data, or anything 
+        that the program needs to handle. Objects can also represent user-defined data 
+        such as vectors, time, and lists.*/
+
+        //Defining object
+        let person = {
+            first_name: 'Vishal',
+            last_name: 'Majumdar',
+
+            //method
+            getFunction: function () {
+                return (`The name of the person is ${person.first_name} ${person.last_name}`)
+            },
+            //object within object
+            phone_number: {
+                mobile: '9582300883',
+                landline: '6789'
+            }
+        }
+        console.log(person.getFunction());
+        console.log(person.phone_number.landline);
+
+        ///////////////////////////////////////////////////////////////////////////////////////////////
+
+        const user = {
+            name: 'Vishal Majumdar',
+            userName: 'Vishal_Majumdar',
+            password: 'password:)',
+            login: function (userName, password) {
+                if (userName === this.userName && password === this.password) {
+                    console.log('Login Successfully');
+                } else {
+                    console.log('Authentication Failed!!');
+                }
+            },
+        };
+
+        user.login('Vishal', 'Vishal');// Authentication Failed!!
+        user.login('Vishal_Majumdar', 'password:)');// Login Successfully
+    </script>
+</body>
+
+</html>

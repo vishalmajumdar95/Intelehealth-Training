@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form onsubmit="return validation();">
+        <input type="text" name="fname" id="firstname" placeholder="First Name">
+        <br><br>
+        <p id="errorname" style="color: red;"></p>
+
+        <input type="text" name="lname" id="lastname" placeholder="Last Name">
+        <br><br>
+        <p id="errorname" style="color: red;"></p>
+
+        <input type="password" name="pass" id="password" placeholder="Password">
+        <br><br>
+        <p id="errorpassword" style="color: red;"></p>
+
+        <input type="email" name="email" id="email" placeholder="Email">
+        <br><br>
+        <p id="erroremail" style="color: red;"></p>
+
+        <input type="text" name="pnumber" id="phone" placeholder="Phone Number">
+        <br><br>
+        <p id="errormobile" style="color: red;"></p>
+
+        <input type="submit" name="submit">
+        <input type="button" value="Delete">
+    </form>
+    <p id="myp"></p>
+    <script>
+    function validation(){
+        var userfirstname = document.getElementById("firstname").value;
+        console.log(userfirstname)
+        var userlastname = document.getElementById("lastname").value;
+        console.log(userlastname)
+        var password = document.getElementById("password").value;
+        var email1 = document.getElementById("email").value;
+        var mobile1= document.getElementById("mobile").value;
+
+        var usercheck = /^[a-zA-Z @ #. ]{3,30}$/;
+        var usercheck = /^[a-zA-Z @ #. ]{3,30}$/;
+		var passwordcheck = /^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,16}$/;
+		var emailcheck = /^[A-Za-z_.]{6,}@[A-Za-z]{4,}[.]{1}[A-Za-z.]{2,}$/;
+		var mobilecheck = /^[6789]{1}[0-9]{9}$/;
+
+        if (usercheck.test(userfirstname)){
+            document.getElementById('errorname').innerHTML=" ";
+        }else{
+            document.getElementById('errorname').innerHTML="***Invalid First Name***";
+            return false;
+        }
+        if (usercheck.test(userlastname)){
+            document.getElementById('errorname').innerHTML=" ";
+        }else{
+            document.getElementById('errorname').innerHTML="***Invalid Last Name***";
+            return false;
+        }
+
+        if (passwordcheck.test(password)){
+            document.getElementById('errorpassword').innerHTML=" ";
+        }else{
+            document.getElementById('errorpassword').innerHTML="***Invalid Password***";
+            return false;
+        }
+
+        if (emailcheck.test(email1)){
+            document.getElementById('erroremail').innerHTML=" ";
+        }else{
+            document.getElementById('erroremail').innerHTML="***Invalid Email Name***";
+            return false;
+        }
+
+        if (mobilecheck.test(mobile1)){
+            document.getElementById('errormobile').innerHTML=" ";
+        }else{
+            document.getElementById('errormobile').innerHTML="***Invalid Mobile Number*** ";
+            return false;
+        }
+    }    
+
+    
+        console.log(document.getElementById('myp').innerHTML = `First_Name : ${document.getElementById('firstname').value}
+                                                    Last_Name : ${document.getElementById('lastname').value}
+                                                    Password : ${document.getElementById("password").value}
+                                                    Email : ${document.getElementById("email").value}
+                                                    Phone Numder : ${document.getElementById("phone").value}`)
+        document.getElementById('myp').innerHTML = `First_Name : ${document.getElementById('firstname').value}
+                                                    Last_Name : ${document.getElementById('lastname').value}
+                                                    Password : ${document.getElementById("password").value}
+                                                    Email : ${document.getElementById("email").value}
+                                                    Phone Numder : ${document.getElementById("phone").value}`
+    
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Inheritance with constructor
+        class Father{
+            constructor(money){
+                this.Fmoney = money;
+            }
+            showFMoney(){
+                return this.Fmoney + " Father Money <br>"
+            }
+        }
+        class Son extends Father{
+            constructor(money){
+                super(money);// using super we are calling constructor of parent class through derived class's constructor
+                this.a = 12;
+                //var a = 12;
+            }
+            showSMoney(){
+                return "Son Money <br"
+            }
+        }
+        //we havn't created instance of father then how we will pass value to father's constructor
+        // we can initialize Fathers constructor through Son using super keyword 
+
+        var s = new Son(3000);
+        document.write(s.showFMoney() + "<br>");
+        // document.write(s.showFMoney() + "<br>");
+        document.write(s.a);
+
+        var f = new Father(5000);
+        document.write(f.showFMoney() + "<br>");
+    </script>
+</body>
+</html>

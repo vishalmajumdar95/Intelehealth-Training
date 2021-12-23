@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body style="text-align: center; font-size: 20px;" bgcolor="LightGray">
+    <h1> Element Finder </h1>
+    Enter a Element: <input id="number">
+    <br><br>
+    <p>["javascript","Python","Java","Html","CSS","Hello"]</p>
+    <button onclick="Finder()">Finder</button>
+    <p id="res"></p>
+    <script>
+        // document.write(`["javascript","Python","Java","Html","CSS","Hello"]`)
+        function include(arr, obj) {
+            for (var i = 0; i < arr.length; i++) {
+                if (arr[i] == obj) {
+                    return true;
+                }
+            }
+        };
+        function Finder() {
+            var arr = ["javascript","Python","Java","Html","CSS","Hello"];
+            var obj = document.getElementById("number").value;
+            var result = include(arr,obj);
+            if(!result){
+                document.getElementById("res").innerHTML = `No! <b>"${obj}"</b> is not present in this Array..`
+            }else{
+                document.getElementById("res").innerHTML = `Yes! <b>"${obj}"</b> is present in this Array..`;
+            }
+        }  
+    </script>
+</body>
+
+</html>
