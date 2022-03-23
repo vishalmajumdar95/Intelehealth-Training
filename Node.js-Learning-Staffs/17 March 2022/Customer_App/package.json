@@ -1,0 +1,23 @@
+{
+  "name": "customer_app",
+  "version": "1.0.0",
+  "description": "\"This is customer app with mongodb in Node.js\"",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start":"nodemon server.js"
+  },
+  "keywords": [
+    "customer",
+    "app"
+  ],
+  "author": "Vishal",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.3",
+    "mongoose": "^6.2.8"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  }
+}
