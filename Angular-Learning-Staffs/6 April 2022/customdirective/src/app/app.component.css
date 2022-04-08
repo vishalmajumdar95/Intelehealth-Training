@@ -1,0 +1,15 @@
+.main{
+    width: 500px;
+    height: 400px;
+    border: 1px solid;
+}
+
+.subdiv{
+    width: 400px;
+    height: 350px;
+    border: 1px solid rgb(255, 0, 157);
+}
+
+.back{
+    background-color:aquamarine;
+}

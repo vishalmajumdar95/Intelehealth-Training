@@ -1,0 +1,92 @@
+<!-- <h1>Hello Angular</h1> -->
+
+<!-- *ngIf  -->
+<!-- <div *ngIf="true">Structural Directive</div> -->
+<!-- <div *ngIf="is valid">Structural Directive</div> -->
+<input type="radio" name="rad" (click)="onchange(true)" checked />true
+<input type="radio" name="rad" (click)="onchange(false)" /> false
+
+<div *ngIf="isvalid">data is valid</div>
+<div *ngIf="!isvalid">data is not valid</div>
+
+<!-- <div *ngIf="title==='directive'">
+  it is directive.
+</div> -->
+<!-- 
+<div *ngIf="title==='directive'; else elsepart">
+  it is a directive.
+</div>
+<ng-template #elsepart>
+  <div>It is not directive.</div>
+</ng-template> -->
+
+<!-- ngFor -->
+
+<ul>
+  <li *ngFor='let p of persons'>
+    {{p.id}} | {{p.name}}
+  </li>
+</ul>
+
+<table border="1">
+  <tr>
+    <th>Sr. No.</th>
+    <th>ID</th>
+    <th>Name</th>
+  </tr>
+  <tr *ngFor='let p of persons; index as i'>
+    <td>{{i+1}}</td>
+    <td>{{p.id}}</td>
+    <td>{{p.name}}</td>
+  </tr>
+</table>
+
+<div *ngFor='let p of persons; index as i; even as isEven; odd as isOdd'>
+  <font color='lightgreen' *ngIf='isEven'>{{p.id}} | {{p.name}}</font>
+  <font color='lightblue' *ngIf='isOdd'>{{p.id}} | {{p.name}}</font>
+</div>
+
+<!-- ngSwitch -->
+<div [ngSwitch]="fcolor">
+  <div *ngSwitchCase="'Yellow'">Yellow Color</div>
+  <div *ngSwitchCase="'Red'">Red Color</div>
+  <div *ngSwitchCase="'Blue'">Blue Color</div>
+  <div *ngSwitchCase="'Green'">Green Color</div>
+  <div *ngSwitchDefault>No Color Matched</div>
+</div>
+
+<!-- <input type="text"="text" #color (keyup)="0"/>
+<div [ngSwitch]="color.value">
+  <div *ngSwitchCase="'Yellow'">Yellow Color</div>
+  <div *ngSwitchCase="'Red'">Red Color</div>  
+  <div *ngSwitchCase="'Blue'">Blue Color</div>
+  <div *ngSwitchCase="'Green'">Green Color</div>
+  <div *ngSwitchDefault>No Color Matched</div>
+</div> -->
+
+<input type="text" #color (keyup)="0" />
+<div [ngSwitch]="color.value">
+  <ng-template [ngSwitchCase]="'Yellow'"> Yellow Color </ng-template>
+  <ng-template [ngSwitchCase]="'Red'"> Red Color </ng-template>
+  <ng-template [ngSwitchCase]="'Blue'"> Blue Color </ng-template>
+  <ng-template [ngSwitchCase]="'Green'"> Green Color </ng-template>
+  <ng-template ngSwitchCaseDefault> No Color Matched </ng-template>
+</div>
+
+<!-- Enter Your Age: <input Type="text" #age (keyup)='0'/>
+<div *ngIf="age.value>18; else elseblock">
+  You are eligible for Voting
+</div>
+<ng-template #elseblock>
+  <div>You are not eligible for Voting</div>
+</ng-template> -->
+
+
+<input type="radio" name="rad" (click)="ongenderchange('male')" />male
+<input type="radio" name="rad" (click)="ongenderchange('female')" />Female
+<input type="radio" name="rad" (click)="ongenderchange('Transgender')" />others
+<div [ngSwitch]="gender1">
+  <ng-template [ngSwitchCase]="'male'"> I am male </ng-template>
+  <ng-template [ngSwitchCase]="'female'"> I am female </ng-template>
+  <ng-template [ngSwitchCase]="'Transgender'"> I am Transgender </ng-template>
+</div>
